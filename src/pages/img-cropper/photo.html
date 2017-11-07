@@ -1,0 +1,24 @@
+<ion-content>
+    <button ion-button (click)="outraPage()">
+        Page 1
+    </button> 
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                    Select Image
+                <img-cropper [image]="data1" [settings]="cropperSettings1"
+                    (onCrop)="cropped($event)" class="photoCropper"
+                >
+                </img-cropper>
+                <span class="result" *ngIf="data1.image" >
+                    <div class="photoCropper">
+                        <img [src]="data1.image" 
+                            [width]="croppedWidth" 
+                            [height]="croppedHeight"
+                        >
+                    </div>
+                </span>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

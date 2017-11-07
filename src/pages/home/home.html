@@ -1,0 +1,30 @@
+<ion-content>
+		<button ion-button (click)="outraPage()">
+				Page 2
+				</button>
+	<ion-card>
+		<ion-card-content>
+			<ion-list>
+				<ion-card-title>
+					Select Image
+				</ion-card-title>
+				<input type="file" (change)="fileChangeEvent($event)" />
+
+				<image-cropper
+					[imageChangedEvent]="imageChangedEvent"
+					[maintainAspectRatio]="true"
+					[aspectRatio]="3 / 3"
+					[resizeToWidth]="350"
+					format="jpg"
+					(imageCropped)="imageCropped($event)"
+					class="crop"
+				>
+				</image-cropper>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+	<ion-card-content class="crop">
+		<img [src]="croppedImage" />
+	</ion-card-content>
+
+</ion-content>
